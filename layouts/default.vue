@@ -1,6 +1,6 @@
 <script setup>
-const isMenuOpened = useState('isMenuOpened', () => null);
-const isDark = useState('isDark', () => true);
+const isMenuOpened = ref(null);
+const isDark = ref(true);
 
 function toggleTheme() {
   if (isDark.value) {
@@ -156,7 +156,7 @@ useHead({
             <div class="u-flex u-cross-center u-flex-vertical u-gap-8">
               <p>
                 Made with <span style="color: hsl(var(
-              							--color-primary-200))">❤️</span> by
+                							--color-primary-200))">❤️</span> by
               </p>
 
               <div>
@@ -178,6 +178,6 @@ useHead({
         </div>
       </div>
     </aside>
-    <slot />
+    <slot></slot>
   </div>
 </template>
