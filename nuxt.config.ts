@@ -5,6 +5,15 @@ export default defineNuxtConfig({
     "~/node_modules/@appwrite.io/pink/dist/pink.css",
     "~/node_modules/@appwrite.io/pink-icons/dist/icon.css",
   ],
+  runtimeConfig: {
+    public: {
+      SsrHostname: "nuxt.ssr.almostapps.eu",
+      AppwriteHostname: "appwrite.nuxt.ssr.almostapps.eu",
+
+      AppwriteEndpoint: "https://appwrite.nuxt.ssr.almostapps.eu/v1",
+      AppwriteProject: "almostSsr",
+    },
+  },
   app: {
     head: {
       charset: "utf-8",

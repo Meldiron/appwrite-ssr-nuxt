@@ -1,11 +1,6 @@
 import * as setCookieParser from "set-cookie-parser";
 
-// TODO: Import those
-export const SsrHostname = "nuxt.ssr.almostapps.eu";
-export const AppwriteHostname = "appwrite.nuxt.ssr.almostapps.eu";
-
-export const AppwriteEndpoint = "https://appwrite.nuxt.ssr.almostapps.eu/v1";
-export const AppwriteProject = "almostSsr";
+const { AppwriteEndpoint, AppwriteHostname, SsrHostname } = useRuntimeConfig();
 
 export default defineEventHandler(async (event) => {
   const fetch = event.fetch;

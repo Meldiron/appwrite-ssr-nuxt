@@ -1,4 +1,10 @@
 <script setup>
+import { useAppwriteService } from '~/src/AppwriteService';
+
+const { AppwriteProject, AppwriteEndpoint } = useRuntimeConfig();
+
+const AppwriteService = useAppwriteService(useRuntimeConfig());
+
 const isLoading = ref(false);
 const modalMessage = ref('');
 const modalType = ref('');

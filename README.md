@@ -1,6 +1,3 @@
-TODO:
-- Add screenshots
-
 ![Almost Cover](public/cover.png)
 
 # Almost SSR - Nuxt
@@ -33,7 +30,7 @@ This makes server-side rendering work, but now client-side rendering is broken. 
 ## 👀 Setup Client
 
 1. Install libarries `npm install`
-2. Update `AppwriteEndpoint` in `utils/AppwriteSerivce.js`
+2. Update `AppwriteEndpoint` in `nuxt.config.js`
 3. Start server `npm run dev`
 
 ## 🚀 Deployment
@@ -41,7 +38,7 @@ This makes server-side rendering work, but now client-side rendering is broken. 
 1. Deploy the frontend on your production domain. For example, `myapp.com`.
 2. Add the frontend domain as a trusted platform in your Appwrite project.
 3. Add a custom domain to your Appwrite project, which is a subdomain of your frontend. For example, `appwrite.myapp.com`.
-4. Update `SsrHostname` and `AppwriteHostname` in `utils/AppwriteSerivce.js` with proper domains.
+4. Update `SsrHostname` and `AppwriteHostname` in `nuxt.config.js` with proper domains.
 
 ## 🤝 Contributing
 

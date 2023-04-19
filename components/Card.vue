@@ -1,5 +1,9 @@
 <script setup>
 
+import { useAppwriteService } from '~/src/AppwriteService';
+
+const AppwriteService = useAppwriteService(useRuntimeConfig());
+
 const props = defineProps({
     isCsr: {
         default: true
