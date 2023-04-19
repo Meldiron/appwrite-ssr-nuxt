@@ -1,6 +1,6 @@
 import * as setCookieParser from "set-cookie-parser";
 
-const { AppwriteEndpoint, AppwriteProject, AppwriteHostname, SsrHostname } = useRuntimeConfig();
+const { AppwriteEndpoint, AppwriteProject, AppwriteHostname, SsrHostname } = useRuntimeConfig().public;
 
 export default defineEventHandler(async (event) => {
   const fetch = event.fetch;
