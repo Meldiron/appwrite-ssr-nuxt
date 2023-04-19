@@ -1,8 +1,7 @@
 <script setup>
-
-let isLoading = ref(false);
-let modalMessage = ref('');
-let modalType = ref('');
+const isLoading = ref(false);
+const modalMessage = ref('');
+const modalType = ref('');
 
 const sessionNames = [
   'a_session_' + AppwriteProject.toLowerCase(),
@@ -10,20 +9,24 @@ const sessionNames = [
 ];
 
 const hash = useCookie(sessionNames[0]) ?? useCookie(sessionNames[1]) ?? '';
-AppwriteService.setSession(hash);
 
-let account;
-try {
-  account = await AppwriteService.getAccount();
-} catch (err) {
-  account = null;
-}
+const authCookies = {};
+authCookies['a_session_' + AppwriteProject] = hash;
+
+let response = await useFetch(`${AppwriteEndpoint}/account/get`, {
+  headers: {
+    'x-appwrite-project': AppwriteProject,
+    'x-fallback-cookies': JSON.stringify(authCookies)
+  }
+});
+console.log(response.data);
+const account = response.data ?? null;
 
 async function onCreateSession() {
   isLoading.value = true;
   try {
     const dialog = document.getElementById('dialog');
-    const res = await fetch('/api/login', {
+    const res = await fetch('/login', {
       method: 'POST',
       body: ''
     });

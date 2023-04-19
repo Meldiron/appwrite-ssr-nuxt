@@ -1,12 +1,16 @@
 <script setup>
 
 const props = defineProps({
-    isCsr: Boolean,
-    account: null
+    isCsr: {
+        default: true
+    },
+    account: {
+        default: null
+    }
 });
 
-let isCsr = ref(props.isCsr);
-let account = ref(props.account);
+const isCsr = ref(props.isCsr);
+const account = ref(props.account);
 
 async function fetchAccount() {
     account.value = true;

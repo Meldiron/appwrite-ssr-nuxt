@@ -1,5 +1,6 @@
 import * as setCookieParser from "set-cookie-parser";
 
+// TODO: Import those
 export const SsrHostname = "nuxt.ssr.almostapps.eu";
 export const AppwriteHostname = "appwrite.nuxt.ssr.almostapps.eu";
 
