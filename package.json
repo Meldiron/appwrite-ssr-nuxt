@@ -10,5 +10,10 @@
   },
   "devDependencies": {
     "nuxt": "^3.4.1"
+  },
+  "dependencies": {
+    "@appwrite.io/pink": "^0.0.6-rc.11",
+    "appwrite": "^11.0.0",
+    "set-cookie-parser": "^2.6.0"
   }
 }
