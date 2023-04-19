@@ -47,7 +47,7 @@ async function fetchAccount() {
                 Fetching Account...
             </template>
             <template v-else>
-                Welcome <code class="u-un-break-text inline-code">{account.$id}</code>
+                Welcome <code class="u-un-break-text inline-code">{{account.$id}}</code>
             </template>
         </h2>
 
