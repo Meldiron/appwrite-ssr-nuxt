@@ -8,7 +8,8 @@ const sessionNames = [
   'a_session_' + AppwriteProject.toLowerCase() + '_legacy'
 ];
 
-const hash = useCookie(sessionNames[0]) ?? useCookie(sessionNames[1]) ?? '';
+const cookie = useCookie(sessionNames[0]) ?? useCookie(sessionNames[1]) ?? null;
+const hash = cookie ? cookie.value : '';
 
 const authCookies = {};
 authCookies['a_session_' + AppwriteProject] = hash;
@@ -19,7 +20,7 @@ let response = await useFetch(`${AppwriteEndpoint}/account/get`, {
     'x-fallback-cookies': JSON.stringify(authCookies)
   }
 });
-console.log(response.data);
+
 const account = response.data ?? null;
 
 async function onCreateSession() {
