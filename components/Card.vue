@@ -9,7 +9,7 @@ const props = defineProps({
         default: true
     },
     account: {
-        default: null
+        default: undefined
     }
 });
 
@@ -62,7 +62,6 @@ async function fetchAccount() {
         <div class="u-flex u-main-space-between u-cross-end u-margin-block-start-40">
             <template v-if="account === undefined || account === true || account === null">
                 <div style="--p-avatar-border-color: var(--color-neutral-120)" class="avatar is-color-empty"></div>
-
             </template>
             <template v-else>
                 <div class="avatar">
