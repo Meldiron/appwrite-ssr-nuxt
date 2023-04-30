@@ -103,7 +103,7 @@ useHead({
                 </a>
               </li>
               <li class="drop-list-item">
-                <a class="drop-button u-cross-center" href="/">
+                <a class="drop-button u-cross-center" href="https://remix.ssr.almostapps.eu/">
                   <svg role="img" width="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <title>Remix</title>
                     <path
@@ -111,7 +111,6 @@ useHead({
                       fill="currentColor" />
                   </svg>
                   <span class="text">Remix</span>
-                  <code class="inline-code">WIP</code>
                 </a>
               </li>
                <li class="drop-list-item">
