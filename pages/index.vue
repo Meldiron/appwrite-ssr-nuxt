@@ -14,11 +14,19 @@ const sessionNames = [
   'a_session_' + AppwriteProject.toLowerCase() + '_legacy'
 ];
 
+console.log(sessionNames);
+
 const cookie = useCookie(sessionNames[0]) ?? useCookie(sessionNames[1]) ?? null;
 const hash = cookie ? cookie.value : '';
 
+
+console.log(cookie);
+console.log(hash);
+
 const authCookies = {};
 authCookies['a_session_' + AppwriteProject] = hash;
+
+console.log(authCookies);
 
 let response = await useFetch(`${AppwriteEndpoint}/account/get`, {
   headers: {
