@@ -16,9 +16,17 @@ const sessionNames = [
 
 console.log(sessionNames);
 
-const cookie = useCookie(sessionNames[0]) ?? useCookie(sessionNames[1]) ?? null;
-const hash = cookie ? cookie.value : '';
+let cookie = useCookie(sessionNames[0]) ?? null;
 
+if(!cookie || !cookie.value) {
+  cookie = useCookie(sessionNames[1]) ?? null;
+}
+
+if(!cookie.value) {
+  cookie = null;
+}
+
+const hash = cookie ? cookie.value : '';
 
 console.log(cookie);
 console.log(hash);
