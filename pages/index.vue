@@ -14,8 +14,6 @@ const sessionNames = [
   'a_session_' + AppwriteProject.toLowerCase() + '_legacy'
 ];
 
-console.log(sessionNames);
-
 let cookie = useCookie(sessionNames[0]) ?? null;
 
 if(!cookie || !cookie.value) {
@@ -28,15 +26,10 @@ if(!cookie.value) {
 
 const hash = cookie ? cookie.value : '';
 
-console.log(cookie);
-console.log(hash);
-
 const authCookies = {};
 authCookies['a_session_' + AppwriteProject] = hash;
 
-console.log(authCookies);
-
-let response = await useFetch(`${AppwriteEndpoint}/account/get`, {
+let response = await useFetch(`${AppwriteEndpoint}/account`, {
   headers: {
     'x-appwrite-project': AppwriteProject,
     'x-fallback-cookies': JSON.stringify(authCookies)
